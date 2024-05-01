@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:simple_interest/screen/output_screen.dart';
 
 class ListTileWidget extends StatelessWidget {
-  const ListTileWidget({super.key, required this.index});
+  const ListTileWidget(
+      {super.key, required this.index, required this.imageName});
   final int index;
+  final String imageName;
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: const Icon(Icons.accessible_forward),
+      leading: CircleAvatar(backgroundImage: AssetImage(imageName)),
       title: Text("Title $index"),
       subtitle: const Text("Bkt, Nepal"),
       trailing: Wrap(
@@ -24,7 +27,14 @@ class ListTileWidget extends StatelessWidget {
         ],
       ),
       onTap: () {
-        debugPrint("Button is clicked!!");
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => OutputScreen(
+              index: index,
+            ),
+          ),
+        );
       },
     );
   }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:simple_interest/screen/arithmetic_screen.dart';
+import 'package:simple_interest/screen/student_details_screen.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -7,7 +7,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: ArithmeticScreen(),
+      home: StudentDetailsScreen(),
     );
   }
 }
